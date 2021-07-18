@@ -3,14 +3,16 @@ using EFCore5WebApp.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EFCore5WebApp.DAL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210718130106_SeedingPersons")]
+    partial class SeedingPersons
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,41 +53,6 @@ namespace EFCore5WebApp.DAL.Migrations
                     b.HasIndex("PersonId");
 
                     b.ToTable("Addresses");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            AddressLine1 = "123 Test St",
-                            AddressLine2 = "",
-                            City = "Beverly Hills",
-                            Country = "USA",
-                            PersonId = 1,
-                            State = "CA",
-                            ZipCode = "90210"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            AddressLine1 = "123 Michigan Ave",
-                            AddressLine2 = "",
-                            City = "Chicago",
-                            Country = "USA",
-                            PersonId = 2,
-                            State = "IL",
-                            ZipCode = "60612"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            AddressLine1 = "100 1St St",
-                            AddressLine2 = "",
-                            City = "Chicago",
-                            Country = "USA",
-                            PersonId = 2,
-                            State = "IL",
-                            ZipCode = "60612"
-                        });
                 });
 
             modelBuilder.Entity("EFCoreWebApp.Core.Entities.LookUp", b =>
