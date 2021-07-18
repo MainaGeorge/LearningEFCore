@@ -7,7 +7,6 @@ namespace EFCoreWebApp.Core.Entities
     [Table("persons", Schema = "dbo")]
     public class Person
     {
-        [Column("Person_Id")]
         public int Id { get; set; }
 
         [Required]
