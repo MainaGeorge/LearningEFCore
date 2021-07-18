@@ -18,6 +18,11 @@ namespace EFCore5WebApp.DAL
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Person>()
+                .HasMany(p => p.Addresses)
+                .WithOne(p => p.Person)
+                .OnDelete(DeleteBehavior.Cascade);
+
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<LookUp>()
                 .HasData(

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EFCoreWebApp.Core.Entities
 {
@@ -13,6 +11,8 @@ namespace EFCoreWebApp.Core.Entities
         public string State { get; set; }
         public string Country { get; set; }
         public string ZipCode { get; set; }
+        
         public int PersonId { get; set; }
+        public Person Person { get; set; }
     }
 }
