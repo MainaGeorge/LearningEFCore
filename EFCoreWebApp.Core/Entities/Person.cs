@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -26,7 +27,11 @@ namespace EFCoreWebApp.Core.Entities
         [NotMapped]
         public string FullName => $"{FirstName} {LastName}";
 
+        public DateTime CreatedOn { get; set; }
+
         public List<Address> Addresses { get; set; } = new List<Address>();
+        public List<Person> Parents { get; set; } = new List<Person>();
+        public List<Person> Children { get; set; } = new List<Person>();
 
     }
 }
