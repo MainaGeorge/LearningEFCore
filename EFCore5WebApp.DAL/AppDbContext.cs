@@ -345,14 +345,16 @@ namespace EFCore5WebApp.DAL
                         Id = 1,
                         FirstName = "John",
                         LastName = "Smith",
-                        EmailAddress = "john@smith.com"
+                        EmailAddress = "john@smith.com",
+                        Age = 30
                     },
                     new Person()
                     {
                         Id = 2,
                         FirstName = "Susan",
                         LastName = "Jones",
-                        EmailAddress = "john@smith.com"
+                        EmailAddress = "john@smith.com",
+                        Age = 26
                     });
 
             modelBuilder.Entity<Address>()
